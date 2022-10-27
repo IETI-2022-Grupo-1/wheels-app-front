@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Test } from './views';
+import { SplashScreen } from './views';
 // Redux
 // import { useSelector } from 'react-redux';
 
@@ -12,7 +12,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Test />}></Route>
+          <Route exact path='/' element={<SplashScreen />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
