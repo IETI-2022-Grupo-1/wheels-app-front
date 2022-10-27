@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Header, ProfileHeader, FormField, Loader } from '../components';
+import { Header, ProfileHeader, FormField, Loader } from './';
 import { Layout } from './';
 import Swal from 'sweetalert2';
-import { useHttp } from '..';
+import { useHttp } from './';
 import { useDispatch, useSelector } from 'react-redux';
-import {startLoading, stopLoading, setUserData} from '../../redux';
+import { createSlice } from '@reduxjs/toolkit';
 
 
 const useProfile = () => {
@@ -41,7 +41,6 @@ const useProfile = () => {
         isDriver,
     };
 };
-export default useProfile;
 
 const Profile = () => {
     const {isDriver,} = useProfile();
@@ -74,3 +73,23 @@ const Profile = () => {
 };
 
 export default Profile;
+
+export const commonSlice = createSlice({
+  name: 'common',
+  initialState: {
+    isLoading: false,
+  },
+  reducers: {
+    startLoading: (state) => {
+      state.isLoading = true;
+    },
+    stopLoading: (state) => {
+      state.isLoading = false;
+    },
+  },
+});
+
+export const { 
+  startLoading,
+  stopLoading
+} = commonSlice.actions;
