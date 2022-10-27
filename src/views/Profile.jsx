@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header, ProfileHeader, FormField, Loader } from '../components';
 import { Layout } from './';
-import { useProfile } from '../utils';
 import Swal from 'sweetalert2';
 import { useHttp } from '..';
 import { useDispatch, useSelector } from 'react-redux';
