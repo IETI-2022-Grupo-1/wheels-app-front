@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { SplashScreen } from './';
-
 const Test = () => {
-  return <SplashScreen />;
+  return <div>test</div>;
 };
 
 export default Test;

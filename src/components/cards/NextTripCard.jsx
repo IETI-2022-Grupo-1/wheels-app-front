@@ -8,12 +8,13 @@ const NextTripCard = ({
     availableSeats = '3',
     carModel = 'Nissan March Azul',
     carPlate = 'JKL 256',
-    date = 'Salida 3:00pm - Llegada 5:00pm',
-    driverName = 'Juan David Murillo',
     driverStars = '5.0',
     isDriver = true,
     stops = ['stop 1', 'stop 2', 'stop 3'],
     title = 'Trayecto a Los Andes',
+    date = 'Salida 3:00pm - Llegada 5:00pm',
+    driverName = 'Juan David Murillo',
+   
 }) => {
     return (
         <div className='nextTripCard nextTripCard__container'>
@@ -23,16 +24,17 @@ const NextTripCard = ({
             </header>
 
             <main className='nextTripCard__main' style={{'borderBottom': isDriver ? '' : 'unset'}}>
-                <div className='nextTripCard__stops--info-container'>
-                    <p className='nextTripCard__stops--title'>Paradas programadas</p>
-                    <p className='nextTripCard__stops--seats-available'>{`${availableSeats} ${availableSeats > 1 ? 'Cupos disponibles' : 'Cupo disponible'}`}</p>
-                </div>
-
                 <div className='nextTripCard__stops'>
                     <ul className='nextTripCard__stops--list'>
                         {stops.map((stop, idx) => <li key={idx}className='nextTripCard__stops--list-item'> - {stop}</li>)}
                     </ul>
                 </div>
+                <div className='nextTripCard__stops--info-container'>
+                    <p className='nextTripCard__stops--title'>Paradas programadas</p>
+                    <p className='nextTripCard__stops--seats-available'>{`${availableSeats} ${availableSeats > 1 ? 'Cupos disponibles' : 'Cupo disponible'}`}</p>
+                </div>
+
+                
             </main>
 
             {isDriver && <footer className='nextTripCard__footer'>
